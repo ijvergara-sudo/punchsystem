@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Punch System</title>
+</head>
+<body>
+
+<h1>Attendance Punch</h1>
+
+{% if message %}
+<h3>{{ message }}</h3>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Username" required>
+    <br><br>
+
+    <input type="password" name="pin" placeholder="PIN" required>
+    <br><br>
+
+    <button type="submit">Punch</button>
+</form>
+
+{% if employee_punches %}
+    <hr>
+    <h2>Recent Punches for {{ employee_name }}</h2>
+
+    <table border="1">
+        <tr>
+            <th>Type</th>
+            <th>Date / Time</th>
+        </tr>
+
+        {% for punch in employee_punches %}
+        <tr>
+            <td>{{ punch.punch_type }}</td>
+            <td>{{ punch.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<br>
+<a href="/reports/">Full Reports</a>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+</head>
+<body>
+
+<h1>Punch Reports</h1>
+
+<table border="1">
+    <tr>
+        <th>Employee</th>
+        <th>Type</th>
+        <th>Time</th>
+    </tr>
+
+    {% for punch in punches %}
+    <tr>
+        <td>{{ punch.employee.full_name }}</td>
+        <td>{{ punch.punch_type }}</td>
+        <td>{{ punch.timestamp }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/">Back</a>
+
+</body>
+</html>
