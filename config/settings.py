@@ -20,6 +20,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -47,12 +48,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -62,12 +58,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3'
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
     )
 }
