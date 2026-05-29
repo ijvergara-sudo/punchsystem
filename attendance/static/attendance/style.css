@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    max-width: 520px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.12);
+}
+
+.container.wide {
+    max-width: 950px;
+}
+
+h1, h2 {
+    color: #243447;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+}
+
+.uagmheader{
+	background: #ff0a0a;
+	color: white;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    margin-top: 6px;
+    border: 1px solid #ccd3dd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    background: #0069d9;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0053ad;
+}
+
+.message {
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: white;
+}
+
+th {
+    background: #0069d9;
+    color: white;
+    padding: 11px;
+}
+
+td {
+    border: 1px solid #d8dde6;
+    padding: 10px;
+    text-align: center;
+}
+
+.links {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 5px;
+    color: #0069d9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

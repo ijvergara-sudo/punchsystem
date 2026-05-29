@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Punch Reports</title>
+    <link rel="stylesheet" href="{% static 'attendance/style.css' %}">
+</head>
+<body>
+
+<div class="container wide">
+    <h1>Punch Reports</h1>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Full Name Stored</th>
+            <th>Type</th>
+            <th>Time</th>
+        </tr>
+
+        {% for punch in punches %}
+        <tr>
+            <td>{{ punch.employee.username }}</td>
+            <td>{{ punch.full_name }}</td>
+            <td>{{ punch.punch_type }}</td>
+            <td>{{ punch.timestamp }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No punches yet.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="links">
+        <a href="/">Punch Page</a>
+        <a href="/live/">Live Monitor</a>
+        <a href="/admin/">Admin</a>
+    </div>
+</div>
+
+</body>
+</html>

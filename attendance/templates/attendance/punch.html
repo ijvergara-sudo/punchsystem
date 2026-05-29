@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UAGM - Preenginering Participant Attendance Punch</title>
+    <link rel="stylesheet" href="{% static 'attendance/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+	<table border=0>
+	<tr>
+	<td class="uagmheader" background="#ff0a0a">
+	
+		<h1> UAGM Preengineering experience</h1>
+		<br>
+		<h2>Participant Attendance</h2>
+	</td>
+	</tr>
+	</table>
+	
+    {% if message %}
+        <div class="message {{ message_type }}">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Parent's Name</label>
+        <input type="text" name="full_name" placeholder="Parent name">
+
+        <label>Participant Username</label>
+        <input type="text" name="username" placeholder="Username" required>
+
+        <label>PIN</label>
+        <input type="password" name="pin" placeholder="PIN" required>
+
+        <button type="submit">Punch In / Out</button>
+    </form>
+
+    {% if employee_punches %}
+        <h2>Recent Punches for {{ employee_name }}</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Date / Time</th>
+            </tr>
+
+            {% for punch in employee_punches %}
+            <tr>
+                <td>{{ punch.full_name }}</td>
+                <td>{{ punch.punch_type }}</td>
+                <td>{{ punch.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+   
+</div>
+
+</body>
+</html>
