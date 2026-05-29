@@ -3,7 +3,7 @@
 python -m venv venv
 venv\Scripts\activate
 
-/*** to update github
+/************** to update github
 /**check status
 git status
 /** add changes
