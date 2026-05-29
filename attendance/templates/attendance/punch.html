@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Punch System</title>
+    <title>Welcome to UAGM Preengineering experience</title>
 </head>
 <body>
 
-<h1>Attendance Punch</h1>
 
+
+
+
+
+<form method="post">
+<table align="center" border=0>
+<tr>
+<td align="center">
 {% if message %}
 <h3>{{ message }}</h3>
 {% endif %}
+<h1>UAGM Preengineering - Attendance Punch</h1>
+</td>
+</tr>
 
-<form method="post">
+<tr>
+<td>
     {% csrf_token %}
 
     <input type="text" name="username" placeholder="Username" required>
-    <br><br>
-
+   </td>
+   </tr>
+   <tr>
+   <td>
     <input type="password" name="pin" placeholder="PIN" required>
-    <br><br>
-
+	</td>
+	</tr>
+	<tr>
+	<td>
     <button type="submit">Punch</button>
+	</td>
+	</tr>
+	<table>
 </form>
+<table>
 
 {% if employee_punches %}
     <hr>

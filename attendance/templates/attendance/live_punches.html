@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Punch Monitor</title>
+    <meta http-equiv="refresh" content="5">
+</head>
+<body>
+
+<h1>Live Punch Monitor</h1>
+<p>This page refreshes every 5 seconds.</p>
+
+<h2>Currently Punched IN</h2>
+
+<table border="1">
+    <tr>
+        <th>Employee</th>
+        <th>Username</th>
+        <th>Punched In At</th>
+    </tr>
+
+    {% for punch in employees_in %}
+    <tr>
+        <td>{{ punch.employee.full_name }}</td>
+        <td>{{ punch.employee.username }}</td>
+        <td>{{ punch.timestamp }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">No employees are currently punched in.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<hr>
+
+<h2>Latest Punches</h2>
+
+<table border="1">
+    <tr>
+        <th>Employee</th>
+        <th>Username</th>
+        <th>Type</th>
+        <th>Time</th>
+    </tr>
+
+    {% for punch in punches %}
+    <tr>
+        <td>{{ punch.employee.full_name }}</td>
+        <td>{{ punch.employee.username }}</td>
+        <td>{{ punch.punch_type }}</td>
+        <td>{{ punch.timestamp }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/">Punch Page</a> |
+<a href="/admin/">Admin</a> |
+<a href="/reports/">Reports</a>
+
+</body>
+</html>

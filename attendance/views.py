@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Employee, Punch
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 def punch_view(request):
@@ -47,3 +48,23 @@ def punch_view(request):
 def reports_view(request):
     punches = Punch.objects.all().order_by("-timestamp")
     return render(request, "attendance/reports.html", {"punches": punches})
+    
+@staff_member_required
+def live_punches_view(request):
+    punches = Punch.objects.select_related("employee").order_by("-timestamp")[:50]
+
+    currently_in = {}
+
+    for punch in Punch.objects.select_related("employee").order_by("employee_id", "-timestamp"):
+        if punch.employee_id not in currently_in:
+            currently_in[punch.employee_id] = punch
+
+    employees_in = [
+        punch for punch in currently_in.values()
+        if punch.punch_type == "IN"
+    ]
+
+    return render(request, "attendance/live_punches.html", {
+        "punches": punches,
+        "employees_in": employees_in,
+    })
