@@ -5,13 +5,17 @@
 	<style>
 	.dynamic {
 		field-sizing: content; /* Grow/shrink with content */
-		min-width: 80px; /* Prevent too small */
-		max-width: 350px; /* Prevent too large */
+		min-width: 200px; /* Prevent too small */
+		max-width: 500px; /* Prevent too large */
+		font-size: 30px;
+		}
+	.boton {font-size: 30px;
+			width: 150px;
 		}
     html * { padding:0; margin:0; }
     body * { padding:10px 20px; }
     body * * { padding:0; }
-    body { font-family: sans-serif; background:#eee; color:#000; }
+    body { font-family: sans-serif; background:#FFF; color:#000; }
     body > :where(header, main, footer) { border-bottom:1px solid #ddd; }
     h1 { font-weight:normal; margin-bottom:.4em; }
     h1 small { font-size:60%; color:#666; font-weight:normal; }
@@ -58,7 +62,7 @@
 	</tr>
 	<tr>
 	<td>
-    <button type="submit">Punch</button>
+    <button type="submit" class="boton">Punch</button>
 	</td>
 	</tr>
 	<table>
