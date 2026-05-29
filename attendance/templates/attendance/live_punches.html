@@ -40,16 +40,16 @@
 
     <table>
         <tr>
+			<th>Participant</th>
             <th>Person in charge</th>
-            <th>Participant</th>
             <th>Type</th>
             <th>Time</th>
         </tr>
 
         {% for punch in punches %}
         <tr>
+			<td>{{ punch.employee.full_name }}</td>
             <td>{{ punch.full_name }}</td>
-            <td>{{ punch.employee.username }}</td>
 		    <td>{{ punch.punch_type }}</td>
             <td>{{ punch.timestamp }}</td>
         </tr>
