@@ -3,6 +3,11 @@
 <head>
     <title>Welcome to UAGM Preengineering experience</title>
 	<style>
+	.dynamic {
+		field-sizing: content; /* Grow/shrink with content */
+		min-width: 80px; /* Prevent too small */
+		max-width: 350px; /* Prevent too large */
+		}
     html * { padding:0; margin:0; }
     body * { padding:10px 20px; }
     body * * { padding:0; }
@@ -43,12 +48,12 @@
 <td>
     {% csrf_token %}
 
-    <input type="text" name="username" placeholder="Username" required>
+    <input type="text" class= "dynamic" name="username" placeholder="Username" required>
    </td>
    </tr>
    <tr>
    <td>
-    <input type="password" name="pin" placeholder="PIN" required>
+    <input type="password" class= "dynamic" name="pin" placeholder="PIN" required>
 	</td>
 	</tr>
 	<tr>
