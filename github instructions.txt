@@ -1,0 +1,33 @@
+
+/*** to init django locally 
+python -m venv venv
+venv\Scripts\activate
+
+/*** run the server
+python manage.py runserver
+
+
+/************** to update github
+/**check status
+git status
+/** add changes
+git add .
+/** commit it
+git commit -m "Fixed Django punch system"
+
+/** push it
+git push origin main
+
+
+/**************** If GitHub rejects the push again
+
+git pull origin main --rebase
+
+/** push it
+git push origin main
+
+
+
+
+/********verify it
+https://github.com/ijvergara-sudo/punchsystem

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Django Punch System
 
 A simple employee attendance punch system using Django.
@@ -42,3 +43,7 @@ In Django admin, add an Employee:
 - Active: checked
 
 Then punch using username `john` and PIN `1234`.
+=======
+# punchsystem
+A punch system
+>>>>>>> b673fa0a2f578d336e17974dd3669d014a1c67e7

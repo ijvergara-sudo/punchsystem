@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Django>=5.0
 gunicorn
 whitenoise
 dj-database-url
 psycopg2-binary
+=======
+django
+gunicorn
+whitenoise
+psycopg2-binary
+dj-database-url
+>>>>>>> b673fa0a2f578d336e17974dd3669d014a1c67e7
