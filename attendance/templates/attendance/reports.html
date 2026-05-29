@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -39,35 +39,6 @@
         <a href="/admin/">Admin</a>
     </div>
 </div>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Reports</title>
-</head>
-<body>
-
-<h1>Punch Reports</h1>
-
-<table border="1">
-    <tr>
-        <th>Employee</th>
-        <th>Type</th>
-        <th>Time</th>
-    </tr>
-
-    {% for punch in punches %}
-    <tr>
-        <td>{{ punch.employee.full_name }}</td>
-        <td>{{ punch.punch_type }}</td>
-        <td>{{ punch.timestamp }}</td>
-    </tr>
-    {% endfor %}
-</table>
-
-<br>
-<a href="/">Back</a>
->>>>>>> b673fa0a2f578d336e17974dd3669d014a1c67e7
 
 </body>
 </html>

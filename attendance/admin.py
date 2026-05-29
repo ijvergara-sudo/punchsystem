@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from django import forms
 from django.contrib import admin
 from .models import Employee, Punch
@@ -43,15 +43,4 @@ class PunchAdmin(admin.ModelAdmin):
     search_fields = ("employee__username", "full_name")
     list_filter = ("punch_type", "timestamp")
     ordering = ("-timestamp",)
-=======
-from django.contrib import admin
-from .models import Employee, Punch
 
-@admin.register(Employee)
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ("username", "full_name", "active")
-
-@admin.register(Punch)
-class PunchAdmin(admin.ModelAdmin):
-    list_display = ("employee", "punch_type", "timestamp")
->>>>>>> b673fa0a2f578d336e17974dd3669d014a1c67e7
