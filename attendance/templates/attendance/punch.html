@@ -56,7 +56,7 @@
 				
 		{% for punch in employee_punches %}
 				<tr>
-					<td>{{ punch.employee.username }}</td>
+					<td>{{ punch.employee.full_name }}</td>
 					<td>{{ punch.full_name }}</td>
 					<td>{{ punch.punch_type }}</td>
 					<td>{{ punch.timestamp }}</td>
