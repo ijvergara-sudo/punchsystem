@@ -42,22 +42,26 @@
     </form>
 
     {% if employee_punches %}
-        <h2>Recent Punches for {{ employee_name }}</h2>
+		
+			<h2>Recent Punches for {{ punch.employee.username }}</h2>
+			
+			<table>
+				<tr>
+					<th>Participant</th>
+					<th>Person in charge</th>
+					<th>Type</th>
+					<th>Date / Time</th>
+				</tr>
 
-        <table>
-            <tr>
-                <th>Person in charge</th>
-                <th>Type</th>
-                <th>Date / Time</th>
-            </tr>
-
-            {% for punch in employee_punches %}
-            <tr>
-                <td>{{ punch.full_name }}</td>
-                <td>{{ punch.punch_type }}</td>
-                <td>{{ punch.timestamp }}</td>
-            </tr>
-            {% endfor %}
+				
+		{% for punch in employee_punches %}
+				<tr>
+					<td>{{ punch.employee.username }}</td>
+					<td>{{ punch.full_name }}</td>
+					<td>{{ punch.punch_type }}</td>
+					<td>{{ punch.timestamp }}</td>
+				</tr>
+		{% endfor %}
         </table>
     {% endif %}
 
