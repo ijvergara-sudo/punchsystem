@@ -18,15 +18,15 @@
 
     <table>
         <tr>
-            <th>Person in charge</th>
-            <th>Username</th>
+            <th>Participant</th>
+			<th>Person in charge</th>
             <th>Punched In At</th>
         </tr>
 
         {% for punch in employees_in %}
         <tr>
-            <td>{{ punch.full_name }}</td>
-            <td>{{ punch.employee.username }}</td>
+            <td>{{ punch.employee.full_name }}</td>
+			<td>{{ punch.full_name }}</td>
             <td>{{ punch.timestamp }}</td>
         </tr>
         {% empty %}
